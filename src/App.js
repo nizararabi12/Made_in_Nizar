@@ -337,7 +337,24 @@ class App extends React.Component {
       showModal: false,
       selectedAnswer: 0,
       score: 0,
+      countDown: 30
     }
+    this.intervalId = null;
+  }
+
+  componentDidMount() {
+    const counter = setInterval(this.startTimer,  1000);
+    this.intervalId = counter;
+  }
+
+  componentDidUpdate() {
+    if(this.state.countDown === 0) {
+      this.setState({...this.state, currentIndex: this.state.currentIndex + 1, countDown: 30});
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
 
   selectAnswer = (index) => {
@@ -345,21 +362,27 @@ class App extends React.Component {
     this.setState({...this.state, selectedAnswer: index});
   }
 
+  startTimer  = () => {
+    this.setState({...this.state, countDown: this.state.countDown -1 })
+  }
+
   showAnswer = () => {
     let {score} = this.state;
     const {quizes, currentIndex, selectedAnswer} = this.state;
     console.log(quizes[currentIndex].antwoorden[selectedAnswer].correct);
     if(quizes[currentIndex].antwoorden[selectedAnswer].correct) {
-      score += 100;
+      const result = this.state.countDown * 10;
+      score += result;
     }
-    console.log(score);
+    clearInterval(this.intervalId);
     this.setState({...this.state, score, showResult: true});
   }
 
   changeQuestion = () => {
+    this.intervalId = setInterval(this.startTimer, 1000);
     const { quizes, currentIndex} = this.state;
     if(currentIndex < quizes.length  - 1) {
-      this.setState({ ...this.state, currentIndex: currentIndex + 1, showResult: false});
+      this.setState({ ...this.state, currentIndex: currentIndex + 1, showResult: false, countDown: 30});
     } else {
       this.setState({...this.state, showModal: true});
     }
@@ -370,7 +393,7 @@ class App extends React.Component {
   }
 
   render() { 
-    const {quizes, currentIndex, showResult, showModal, score, selectedAnswer} = this.state;
+    const {quizes, currentIndex, showResult, showModal, score, selectedAnswer, countDown} = this.state;
     const imageUrl = `${process.env.PUBLIC_URL}/assets/${currentIndex + 1}.png`;
     return (
       <div className="App">
@@ -391,7 +414,10 @@ class App extends React.Component {
               <button onClick={this.resetQuiz}>play again!</button>
             </div>)
         : null}
+        <div className="results">
         <p>Score: {score}</p>
+        <p>Timer: {countDown}</p>
+        </div>
       </div>
     );
   }
