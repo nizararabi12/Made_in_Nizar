@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9035200024990956dcdff1065ab2a07b",
+    "revision": "8fcf7f4718eac228a932432d771d052d",
     "url": "/Made_in_Nizar/index.html"
   },
   {
-    "revision": "59391f21d81ae6193a83",
+    "revision": "a150a395a7c4c65e11b7",
     "url": "/Made_in_Nizar/static/css/main.313e8620.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Made_in_Nizar/static/js/2.d177918d.chunk.js"
   },
   {
-    "revision": "59391f21d81ae6193a83",
-    "url": "/Made_in_Nizar/static/js/main.41289d37.chunk.js"
+    "revision": "a150a395a7c4c65e11b7",
+    "url": "/Made_in_Nizar/static/js/main.787dc6d4.chunk.js"
   },
   {
     "revision": "55c6a99f60508bed87ab",
