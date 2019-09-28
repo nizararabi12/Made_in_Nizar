@@ -371,7 +371,7 @@ class App extends React.Component {
 
   render() { 
     const {quizes, currentIndex, showResult, showModal, score, selectedAnswer} = this.state;
-    const imageUrl = `${process.env.PUBLIC_URL}./assets/${currentIndex + 1}.png`;
+    const imageUrl = `${process.env.PUBLIC_URL}/assets/${currentIndex + 1}.png`;
     return (
       <div className="App">
         <Quiz 
