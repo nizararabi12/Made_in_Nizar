@@ -348,8 +348,9 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this.state.countDown === 0) {
-      this.setState({...this.state, currentIndex: this.state.currentIndex + 1, countDown: 30});
+    const {countDown, currentIndex, quizes} = this.state;
+    if(countDown === 0 && currentIndex < quizes.length  - 1) {
+      this.setState({...this.state, currentIndex: currentIndex + 1, countDown: 30});
     }
   }
 
@@ -363,7 +364,9 @@ class App extends React.Component {
   }
 
   startTimer  = () => {
-    this.setState({...this.state, countDown: this.state.countDown -1 })
+    if(this.state.countDown > 0) {
+      this.setState({...this.state, countDown: this.state.countDown -1 })
+    }
   }
 
   showAnswer = () => {
@@ -385,6 +388,7 @@ class App extends React.Component {
       this.setState({ ...this.state, currentIndex: currentIndex + 1, showResult: false, countDown: 30});
     } else {
       this.setState({...this.state, showModal: true});
+      clearInterval(this.intervalId);
     }
   }
 
