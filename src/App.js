@@ -382,7 +382,8 @@ class App extends React.Component {
   }
 
   changeQuestion = () => {
-    this.intervalId = setInterval(this.startTimer, 1000);
+    const counter = setInterval(this.startTimer, 1000);
+    this.intervalId = counter;
     const { quizes, currentIndex} = this.state;
     if(currentIndex < quizes.length  - 1) {
       this.setState({ ...this.state, currentIndex: currentIndex + 1, showResult: false, countDown: 30});
@@ -393,7 +394,9 @@ class App extends React.Component {
   }
 
   resetQuiz = () => {
-    this.setState({...this.state, showModal: false, currentIndex: 0, score: 0, selectedAnswer: 0, showResult: false });
+    this.setState({...this.state, showModal: false, currentIndex: 0, score: 0, selectedAnswer: 0, showResult: false, countDown: 30 });
+    const counter = setInterval(this.startTimer, 1000);
+    this.intervalId = counter;
   }
 
   render() { 
