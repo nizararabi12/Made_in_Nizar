@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Made_in_Nizar/static/css/main.74bd5a13.chunk.css",
-    "main.js": "/Made_in_Nizar/static/js/main.6e1e19c3.chunk.js",
-    "main.js.map": "/Made_in_Nizar/static/js/main.6e1e19c3.chunk.js.map",
+    "main.js": "/Made_in_Nizar/static/js/main.fb4f8fbb.chunk.js",
+    "main.js.map": "/Made_in_Nizar/static/js/main.fb4f8fbb.chunk.js.map",
     "runtime-main.js": "/Made_in_Nizar/static/js/runtime-main.071dc2b2.js",
     "runtime-main.js.map": "/Made_in_Nizar/static/js/runtime-main.071dc2b2.js.map",
     "static/js/2.d177918d.chunk.js": "/Made_in_Nizar/static/js/2.d177918d.chunk.js",
     "static/js/2.d177918d.chunk.js.map": "/Made_in_Nizar/static/js/2.d177918d.chunk.js.map",
     "index.html": "/Made_in_Nizar/index.html",
-    "precache-manifest.e5f84f95454810c28c36731a8009827e.js": "/Made_in_Nizar/precache-manifest.e5f84f95454810c28c36731a8009827e.js",
+    "precache-manifest.eb7a3faf3e54f4003a11225d01547dff.js": "/Made_in_Nizar/precache-manifest.eb7a3faf3e54f4003a11225d01547dff.js",
     "service-worker.js": "/Made_in_Nizar/service-worker.js",
     "static/css/main.74bd5a13.chunk.css.map": "/Made_in_Nizar/static/css/main.74bd5a13.chunk.css.map"
   }
